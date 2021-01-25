@@ -1,0 +1,96 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import "bootstrap";
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
+
+// userinfo
+.profile-name {
+  margin-top: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-colo: grey;
+}
+
+.profile-intro {
+  margin-top: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: grey;
+  overflow-wrap : break-word;
+}
+
+.b-text {
+  font-weight: bold;
+}
+
+a {
+  text-decoration: none;
+}
+
+//flash message
+.error-message {
+  color:red;
+}
+.error-title {
+  color:red;
+}
+.successfully-message-box{
+  color:green;
+}
+
+/*各種ボタン*/
+.btn-info {
+  border-radius: 3px;
+}
+
+.btn-danger {
+  border-radius: 3px;
+}
+.btn-success {
+  border-radius: 3px;
+}
+
+/*ヘッダーメニューバー*/
+header {
+  background-color:#343a40;
+  color:white;
+}
+header a{
+  color:white;
+}
+.nav-item {
+  margin-left: 30px;
+}
+
+// フッター
+footer {
+  margin-top: 30px;
+  text-align: center;
+}
+
+
+// edit
+.pagelink {
+  text-align: center;
+  padding-top: 50px;
+}
+.pagelink p{
+  display: inline-block;
+  margin:0 5px;
+
+}
+

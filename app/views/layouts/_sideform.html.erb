@@ -1,0 +1,37 @@
+
+<div class="container">
+      <!--ユーザー情報-->
+      <h2>User info</h2>
+      <table class="table table-hover">
+        <tbody class="b-text">
+          <%= attachment_image_tag user, :profile_image, format: 'jpeg', size: "100x100",fallback: "no_image.jpg" %>
+          <tr class="profile-name"><td>name</td><td><%= user.name %></td></tr>
+          <tr class="profile-intro"><td>introduction</td><td><%= user.introduction %></td></tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="2">
+            <!--編集ボタン-->
+            <%= link_to edit_user_path(user.id) , class: "btn btn-outline-secondary btn-sm btn-block" do %>
+                <i class="fas fa-user-cog"></i>
+            <% end %>
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+        <!--投稿フォーム-->
+      <h2>New book</h2>
+      <%= form_with model: book, local:true do |f| %>
+        <!-- エラーメッセージ部分-->
+        <%= render 'layouts/error_messages', model: f.object %>
+        <p>Title</p>
+          <%= f.text_field :title , class: "form-control" %>
+        <p>Opinion</p>
+          <%= f.text_area :body , class: "form-control"%>
+        <p>
+          <div class= "green-button">
+            <%= f.submit 'Create Book' ,class: "btn btn-success" %>
+          </div>
+        </p>
+      <% end %>
+</div>

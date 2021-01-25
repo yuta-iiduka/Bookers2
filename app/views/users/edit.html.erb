@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6 mx-auto">
+      <h2>User info</h2>
+        <%= form_with model:@user, local:true do |f| %>
+          <%= render 'layouts/error_messages', model: f.object %>
+          <label for="inputName">Name</label>
+          <div class="form-group">
+            <%= f.text_field :name, autofocus: true, id:"inputName", placeholder:"名前", class: "form-control" %>
+          </div>
+          <label for="inputImage">Image</label>
+          <div class="edit-Imagebox">
+            <%= f.attachment_field :profile_image, placeholder: "プロフィール画像" %>
+          </div>
+          <label for="inputIntro">Introduction</label>
+          <div class="form-group">
+            <%= f.text_area :introduction, class: "form-control"%>
+          </div>
+            <%= f.submit "Update User",class: "btn btn-secondary btn-sm" %>
+        <% end %>
+    </div>
+  </div>
+</div>
+<!-- 幅を合わせるには？-->

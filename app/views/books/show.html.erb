@@ -1,0 +1,42 @@
+<body>
+  <div class="container">
+    <div class="row">
+      <!--サイドバー-->
+      <div class="col-md-3">
+        <%= render 'layouts/sideform', user: @user , book: @newbook %>
+      </div>
+      <!--一覧-->
+      <div class="col-md-8 offset-md-1">
+        <h1>Book detail</h1>
+        <table class="table table-hover">
+          <tr>
+            <th></th>
+            <th class="books_title"></th>
+            <th class="books_body"></th>
+            <th></th>
+            <th></th>
+          </tr>
+          <tr>
+            <td>
+              <p><%= attachment_image_tag @book.user, :profile_image, size: "60x60", fallback: "no_image.jpg" %></p>
+              <p><%= link_to @book.user.name,user_path(@book.user.id) %></p>
+            </td>
+            <td><%= link_to @book.title,book_path(@book.id) %></td>
+            <td><%= @book.body %></td>
+            <td>
+              <% if @book.user == current_user %>
+                <%= link_to "Edit",edit_book_path(@book.id), class: "btn btn-success" %>
+              <% end %>
+            </td>
+            <td>
+              <% if @book.user == current_user %>
+                <%= link_to "Destroy",book_path(@book.id), method: :delete, "data-confirm" => '本当に消しますか?', class: "btn btn-danger" %>
+              <% end %>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</body>
+
